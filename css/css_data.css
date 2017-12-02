@@ -1,11 +1,15 @@
 /****************************
 	Author: vyom chhabra
 	Date  : 10/23/2017 Log: Created
-	Date  : 10/25/2017 Log: Update
-	Date  : 10/27/2017 Log: Update
-	Date  : 10/29/2017 Log: Update
-	Date  : 10/31/2017 Log: Update
-	Date  : 11/01/2017 Log: Update
+	Date  : 10/25/2017 Log: Update by Vyom Chhabra - tweaks
+	Date  : 10/27/2017 Log: Update by Vyom Chhabra - tweaks
+	Date  : 10/29/2017 Log: Update by Vyom Chhabra - animation
+	Date  : 10/31/2017 Log: Update by Vyom Chhabra - tweaks
+	Date  : 11/07/2017 Log: Update by Vyom Chhabra overlaod data
+	Date  : 11/11/2017 Log: Update by Vyom Chhabra - tweaks
+	Date  : 11/16/2017 Log: Update by Vyom Chhabra - tweaks
+	Date  : 11/21/2017 Log: Update by Vyom Chhabra social media styles
+	Date  : 11/25/2017 Log: Update by Vyom Chhabra loader data
 *****************************/
 
 /****************************
@@ -48,6 +52,27 @@ pre {
     white-space: -pre-wrap;      /* Opera 4-6 */
     white-space: -o-pre-wrap;    /* Opera 7 */
     word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+/****************************
+Loader Data
+*****************************/
+div.loader {
+	margin:auto;
+    border-left: 20px solid rgba(46,41,37,1); /* Lft brown */
+    border-top: 20px solid rgba(243,147,47,1); /* Lft yellow */
+    border-right: 20px solid rgba(46,41,37,1); /* Lft brown */
+    border-bottom: 20px solid rgba(243,147,47,1); /* Lft yellow */
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 3s ease infinite;
+}
+
+@keyframes spin{
+    0% { transform: rotate(0deg) scale(1); border-width: 20px; width: 80px; height: 80px;}
+    50% { transform: rotate(270deg) scale(.5); border-width: 50px; width: 20px; height: 20px;}
+    100% { transform: rotate(-180deg) scale(1); border-width: 20px; width: 80px; height: 80px;}
 }
 /****************************
 Div Data
@@ -394,17 +419,29 @@ input[type=submit] {
     cursor: pointer;
 	font-size: 1vw;
 }
-select {
+
+    select {	  
+	border: 0;
 	height: 4vw;
     width: 41vw;
-    display: inline-block;
-    border: 0;
+    display: inline-block;    
     border-radius: 1vw;
 	padding: .5vw;
 	text-indent: 1vw;
 	font-size: 1vw;
-    background-color: rgba(220,220,220,.8);
+    
+    /*Removes default arrow and replaces with a custom arrow image on browsers except for IE*/
+    -webkit-appearance: none;
+	-moz-appearance: none;
+	background: rgba(220,220,220,.8) url(../img/arrow.png) no-repeat 95% center;
+    background-size:3%;      
 }
+
+/*Removes default arrow on IE*/
+select::-ms-expand {
+    display: none;
+}
+
 textarea {
 	height: 15vw;
     width: 40vw;
@@ -782,7 +819,18 @@ Overload Data
 		text-indent: 1vh;
 		font-size: 2vh;
 		background-color: rgba(220,220,220,.8);
-	}
+
+        /*Removes default arrow and replaces with a custom arrow image on browsers except for IE*/
+        -webkit-appearance: none;
+	    -moz-appearance: none;
+	    background: rgba(220,220,220,.8) url(../img/arrow.png) no-repeat 95% center;
+        background-size:3%;      
+    }
+
+    /*Removes default arrow on IE*/
+    select::-ms-expand {
+        display: none;
+    }
 	textarea {
 		height: 15vh;
 		width: 45vw;

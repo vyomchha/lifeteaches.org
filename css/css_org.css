@@ -1,0 +1,260 @@
+﻿/****************************
+	Author: Lija Jose
+	Date  : 11/09/2017 Log: Created
+    Date  : 11/10/2017 Log: Updated
+    Date  : 11/11/2017 Log: Updated
+    Date  : 11/12/2017 Log: Updated
+    Date  : 11/13/2017 Log: Updated
+    Date  : 11/16/2017 Log: Updated
+	Date  : 11/22/2017 Log: Updated
+
+*****************************/
+
+
+body.bg_body_org {
+    display: flex;
+    height: 100vh;
+}
+
+.bg_org_header {
+    height: 100vh;
+    width:15vw;
+}
+
+.org_lt_img{
+    margin-top:2vw;
+    padding-right:.2vw;
+    width:14vw;
+    height:20vh;
+    box-sizing:border-box;
+}
+
+.bg_hd_lt_social {
+    font-size:1vw;
+    margin:60vh 0 0 1vw;    
+    color: rgba(255,245,225,1);
+}
+
+span.org_title{    
+    width:20vw;    
+	margin: auto;        
+	font-size: 2.5vw;    
+  	background-color: rgba(46,41,37,.5);
+	color: rgba(243,147,47,1);
+    display: flex;
+    justify-content:center;		
+}
+
+.org_logo{
+    width:10vw;
+    height:10vw;
+}
+
+/*Using to hide scrollbar*/
+div.outer_container{
+    width: 65vw;
+    height: 100vh;
+    position:relative;
+    overflow:hidden;
+}
+
+div.bg_main_org{
+    width:67vw;
+    height:100vh;
+    background-color: rgba(255,255,250,1);
+
+    /*Using to hide scrollbar*/
+    position:absolute;
+    left:0;
+    overflow-x:hidden;
+    overflow-y:scroll;
+}
+
+/*Using to hide scrollbar*/
+div.bg_main_org::-webkit-scrollbar{
+    display:none;
+}
+
+div.bg_main_para_org {
+    display: block;
+	position: relative;
+	width: 67vw;
+    height: 100vh;
+    box-sizing:border-box;
+	background-size: 100%;
+	font-size: 1vw;
+    overflow: auto;    
+	text-align: center;
+	margin: auto;
+	padding: 1.5vw 0;
+	background-color: rgba(250,250,240,1);
+    -webkit-box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.3);
+}
+
+div.org_section{
+    border-bottom: solid black 0.2vw;
+    box-sizing:border-box;
+    width:60vw;
+    padding:2vw 0;
+    margin:0 2.5vw 0 2.4vw;
+}
+
+div.flex_box{
+    /* Using flex box to centrally align child items within the parent element. */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+div.org_parallax{    
+    background-image:url('../img/organization/theme/brac.png');
+    height:30vh;
+    width:60vw;    
+
+    /*Creating parallax scrolling effect*/
+    background-attachment:fixed;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+div.org_info1{
+    width: 15vw;
+	margin: auto;
+	font-size: 1.5vw;
+    font-style: italic;    
+	padding: 1vw 0;
+	display: inline-block;	
+	text-align: justify;
+	border-right: solid black 0.2vw;    
+}
+
+div.org_info2 {
+	width: 20vw;
+	margin: auto;
+	font-size: 1vw;
+	padding: 1vw 0;
+	display: inline-block;
+	color: rgba(46,41,37,1);
+	text-align: justify;    
+}
+
+div.org_show_more_button{
+    width:8vw;
+    height:8vw;    
+	margin-right:5vw;
+    box-sizing:border-box;
+	font-size: 1.5vw;
+    padding:2vw 1.1vw;
+	color: rgba(255,255,250,1);
+    background-color: rgba(243,147,47,1); 
+    border-radius:50%;
+    border: .2vw solid rgba(243,147,47,1); 
+    transition:all 0.4s ease;     
+}
+
+div.org_show_more_button:hover{
+    color: rgba(243,147,47,1);
+    background-color: rgba(255,255,250,1); 
+}
+
+div.org_show_more_info{    
+    width:60vw;
+    height:40vh;
+    font-size:.8vw;
+    /*This will divide the content into columns per view*/
+    column-count:4;
+    overflow:auto;
+}
+
+div.org_story{
+min-height:30vw;
+}
+
+div.org_story_player{
+    margin:auto;
+    padding:1vw;
+}
+/** Social Media Styles **/
+.fa{
+    padding:.5vw;
+    width:1.5vw;
+    text-align:center;
+    text-decoration:none;
+    margin:.2vw;
+    border-radius:50%;
+    transition:transform .5s; 
+    background:rgba(243,147,47,1);
+    color:white;     
+}
+
+.fa:hover{
+    background: white;
+    color: rgba(243,147,47,1); 
+    /*Translate raises the icon to position specified*/
+    transform:translate(0,-5px);    
+}
+
+div.bg_org_footer{
+    display:block;
+    text-align:left;
+    width:20vw;
+    height:100vh;
+    font-size:1vw;
+    padding:.5vw;
+    box-sizing:border-box;
+    overflow:auto;
+    color: rgba(243,147,47,1);
+    background-color: rgba(46,41,37,1);
+    margin: 0;  
+}
+
+div.org_footer_so_outer{
+    height:80vh;
+    width:19.5vw;
+    
+    position:relative;
+    overflow:hidden;
+}
+
+div.org_footer_so_inner{
+    height:80vh;
+    width:21vw;
+
+    /*Using to hide scrollbar for browsers other than webkit.*/
+    position:absolute;
+    left:0;
+    overflow-x:hidden;
+    overflow-y:scroll;
+}
+
+/*Using to hide scrollbar on Chrome and Safari*/
+div.org_footer_so_inner::-webkit-scrollbar{
+    display:none;
+}
+
+div.org_footer_so_element::-webkit-scrollbar{
+    display:none;
+}
+
+div.org_footer_so_element{
+    height:10vh;
+    width:19.5vw;
+    overflow-y:scroll;  
+}
+
+li.org_footer_so_li{
+    margin-bottom:1vw;
+    transition:color ease;
+}
+
+li.org_footer_so_li:hover{
+    color: white;
+    background-color: rgba(243,147,47,1);
+}
+
+a.org_fa_icons{
+    width:1vw;
+    font-size:1vw;
+}
