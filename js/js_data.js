@@ -1,3 +1,10 @@
+/****************************
+	Author: Vyom Chhabra
+	Date  : 11/24/2017 Log: Created
+	Date  : 12/01/2017 Log: Udated by Lija Jose - Form validation for Safari
+
+*****************************/
+
 var base = 0;
 var a=0;
 var b=0;
@@ -62,26 +69,44 @@ function set_btn() {
 	btn_menu[a].className = btn_menu[a].className.replace(" bg_btn_menu_hov", "");
 	btn_menu[b].className += " bg_btn_menu_hov";
 }
-
-function show_search() {	
-	var n = document.getElementById("orgs").value;
-	var a = document.getElementById("area").value;
-	var s = document.getElementById("serv").value;
-	var str = "orgs="+n+"&area="+a+"&serv="+s;
-	var xhttp;
-	var div = document.getElementById("bg_txt_search_data");
-	
-	if (str.length == 0) { 
-		div.innerHTML = "";
-		return;
-	}
-	
-	xhttp = new XMLHttpRequest();
-	xhttp.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
-		  document.getElementById("txtHint").innerHTML = this.responseText;
-		}
-	};
-	xhttp.open("GET", "lt_search.php?"+str, true);
-	xhttp.send();
+function show_loader1() {
+	var myVar = setTimeout(show_data1, 3000);
+	//show_data1();
 }
+
+function show_data1() {
+	document.getElementById("load01").style.display = "none";
+	document.getElementById("data01").style.display = "block";
+}	
+
+function show_loader2() {
+	var myVar = setTimeout(show_data2, 3000);
+	//show_data2();
+}
+
+function show_data2() {
+	document.getElementById("load02").style.display = "none";
+	document.getElementById("data02").style.display = "block";
+}
+
+$(document).ready(function () {
+    $("form").submit(function (e) {
+        var form = $(this);
+        var reqField = form.find("[required]");
+        $(reqField).each(function () {
+            if ($(this).val() == '') {
+                if ($(this).next(".validation").length == 0) {
+                    $(this).after("<div class='validation' style='color:red;font-size:12px;'>Please enter " + $(this).attr('name').toUpperCase() + ".</div>");
+                }
+                $(this).focus();
+                e.preventDefault();
+                return false;
+            }
+            else {
+                if ($(this).next(".validation").length != 0) {
+                    $(this).next(".validation").remove();
+                }
+            }
+        }); return true;
+    });
+});
